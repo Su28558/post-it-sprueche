@@ -1,0 +1,91 @@
+<!-- Filename: inspirations-postit.html -->
+<!--
+Kurzinfo:
+- Unauffällige Inspirations-Post-It-App für den Schreibtisch.
+- Zeigt kleine motivierende oder witzige Sprüche.
+- Steuerung: Klick auf "Nächster Satz" für neue Inspiration.
+- Komplett lokal, kein Upload, minimalistisch und unauffällig.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Inspirations-Post-It</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fdf6e3;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      color: #d2691e;
+      margin-bottom: 1rem;
+    }
+    #postit {
+      background: #fffa8c;
+      border: 2px solid #e2d92e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 400px;
+      font-size: 1.2rem;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
+      min-height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #d2691e;
+      background: #fff;
+      cursor: pointer;
+    }
+    #footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Inspirations-Post-It</h1>
+  <div id="postit">Klick auf den Button für eine Inspiration!</div>
+  <button id="nextBtn">Nächster Satz</button>
+  <div id="footer">Alles lokal und unauffällig.</div>
+
+  <script>
+    const postit = document.getElementById('postit');
+    const nextBtn = document.getElementById('nextBtn');
+
+    const messages = [
+      "Du machst das großartig! 🌟",
+      "Nur ein kleiner Schritt kann viel bewirken.",
+      "Kurze Pause? Atme tief durch 😌",
+      "Kaffee ist super, aber du bist besser ☕",
+      "Lächle für 5 Sekunden – es wirkt Wunder 😁",
+      "Kreativität entsteht auch in kleinen Momenten.",
+      "Du bist konzentrierter als du denkst!",
+      "Mini-Erfolg zählt genauso viel 🎉",
+      "Mach es wie ein Post-It: bleib dran!",
+      "Kleine Schritte führen zu großen Zielen."
+    ];
+
+    function showRandomMessage() {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      postit.textContent = msg;
+    }
+
+    nextBtn.onclick = showRandomMessage;
+  </script>
+</body>
+</html>
